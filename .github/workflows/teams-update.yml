@@ -1,0 +1,22 @@
+name: Teams Update
+on:
+  push:
+    paths:
+      - ".github/workflows/teams-update.yml"
+      - "teams.yaml"
+  workflow_dispatch:
+
+jobs:
+  update-teams:
+    # if: github.ref_name == 'master' && github.repository == 'peeweep-test/action-teams-manager'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: update teams
+        uses: peeweep-test/action-teams-manager@master
+        with:
+          app_id: 164400
+          installationId: 22221748
+          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+          config_file: teams.yaml
