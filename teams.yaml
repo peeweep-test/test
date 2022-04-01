@@ -1,19 +1,20 @@
 teams:
-  Team1: # team 名
-    parent_team: "Maintainers"
-    members: # team 成员
+  - name: Team1
+    parent_team: Maintainers
+    members:
       - peeweep
       - xiayesuifeng
     repositories_permissions:
-      # permissions = ["pull", "push", "admin", "maintain", "triage"];
-      - triage:
-          - .github
-      - maintain:
-          - supersm
+      admin:
+        - supersm
+      triage:
+        - .github
     projects_permissions:
-      # permissions = ["read", "write", "admin"];
-      - admin:
-          - project1 # project name
-          - project2
-      - read:
-          - project2
+      read:
+        - project2
+        - project1
+      write:
+        - project1
+  - name: Maintainers
+    members:
+      - peeweep
