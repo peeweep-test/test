@@ -20,5 +20,5 @@ jobs:
           installationId: 22221748
           private_key: ${{ secrets.APP_PRIVATE_KEY }}
           config_file: teams.yaml
-          generate_yaml: true
-          update_teams: false
+          generate_yaml: false
+          update_teams: true
